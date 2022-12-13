@@ -29,11 +29,8 @@
  */
 
 function callApi($user_id)
-    {
-    	$user_id = get_current_user_id();
-    	$user = get_user_by('id', $user_id);
-
-    	$testEmail = $user->user_email;
+    {	$current_user = wp_get_current_user();
+    	$testEmail = $current_user->user_email;
     	
         $service = new AnubisService;
 

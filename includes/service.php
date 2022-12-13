@@ -9,14 +9,14 @@ class AnubisService
     public $enableDebug = true;
 
     // connection params
-    public $userName      = ANUBIS_USER_NAME;
-    public $password      = ANUBIS_PASSWORD;
-    public $mandatorId    = ANUBIS_MANDATOR_ID;
-    public $customerId    = ANUBIS_CUSTOMER_ID;
-    public $contractId    = ANUBIS_CONTRACT_ID;
-    public $globalOrderId = ANUBIS_GLOBAL_ORDER_ID;
-    public $sourceId      = ANUBIS_SOURCE_ID;
-    public $orderNumber   = ANUBIS_ORDER_NUMBER;
+    public $userName      = getenv('ANUBIS_USER_NAME');
+    public $password      = getenv('ANUBIS_PASSWORD');
+    public $mandatorId    = getenv('ANUBIS_MANDATOR_ID');
+    public $customerId    = getenv('ANUBIS_CUSTOMER_ID');
+    public $contractId    = getenv('ANUBIS_CONTRACT_ID');
+    public $globalOrderId = getenv('ANUBIS_GLOBAL_ORDER_ID');
+    public $sourceId      = getenv('ANUBIS_SOURCE_ID');
+    public $orderNumber   = getenv('ANUBIS_ORDER_NUMBER');
 
     // filter constants
     const FILTER_NO_CLOSED_CONTRACTS = 'NO_CLOSED_CONTRACTS';
