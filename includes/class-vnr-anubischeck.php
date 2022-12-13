@@ -28,9 +28,10 @@
  * @author     Steve Kraft & Peter Mertzlin <direct@extensionforge.com>
  */
 
-function callApi($user_id)
+function callApi()
     {	$current_user = wp_get_current_user();
     	$testEmail = $current_user->user_email;
+    	$user_id = get_current_user_id();
     	
         $service = new AnubisService;
 
@@ -59,7 +60,7 @@ function callApi($user_id)
 add_action('set_logged_in_cookie', 'custom_get_logged_in_cookie_anubischeck', 10, 6);
 function custom_get_logged_in_cookie_anubischeck($logged_in_cookie, $expire, $expiration, $user_id, $logged_in_text, $token)
 {
-	callApi($user_id);
+	callApi();
 }
 
 
