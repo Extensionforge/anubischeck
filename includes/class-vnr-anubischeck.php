@@ -145,7 +145,7 @@ class My_Custom_Widget extends WP_Widget {
 		echo '<div class="widget-text vnr_enter_customernr">';
 
 			// Display widget title if defined
-if(isset($isvip[0])){
+
 		if($isvip[0]=="1") { 
 
 			$imageurl = plugins_url('vip-badge.jpg', __FILE__);
@@ -161,7 +161,7 @@ if(isset($isvip[0])){
 				echo '<div class="linkcontainer"><a class="vnr_enter_customernr_link" href="'.$linkurl.'">'.$linktitle.'</a></div>';
 			}
 		}
-	}
+	
 		
 		echo '</div>';
 
