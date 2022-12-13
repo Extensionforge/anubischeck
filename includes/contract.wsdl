@@ -1,0 +1,785 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions name="ContractService" targetNamespace="http://contract.ws.epsb.bitech.de/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://contract.ws.epsb.bitech.de/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://contract.ws.epsb.bitech.de/" xmlns:tns="http://contract.ws.epsb.bitech.de/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="changeEproductActivation" type="tns:changeEproductActivation"/>
+  <xs:element name="changeEproductActivationResponse" type="tns:changeEproductActivationResponse"/>
+  <xs:element name="hasContract" type="tns:hasContract"/>
+  <xs:element name="hasContractByCustomerEmail" type="tns:hasContractByCustomerEmail"/>
+  <xs:element name="hasContractByCustomerEmailResponse" type="tns:hasContractByCustomerEmailResponse"/>
+  <xs:element name="hasContractByEmail" type="tns:hasContractByEmail"/>
+  <xs:element name="hasContractByEmailResponse" type="tns:hasContractByEmailResponse"/>
+  <xs:element name="hasContractByProductShortname" type="tns:hasContractByProductShortname"/>
+  <xs:element name="hasContractByProductShortnameResponse" type="tns:hasContractByProductShortnameResponse"/>
+  <xs:element name="hasContractResponse" type="tns:hasContractResponse"/>
+  <xs:element name="readCurrentContracts" type="tns:readCurrentContracts"/>
+  <xs:element name="readCurrentContractsResponse" type="tns:readCurrentContractsResponse"/>
+  <xs:element name="readCustomerSubscriptions" type="tns:readCustomerSubscriptions"/>
+  <xs:element name="readCustomerSubscriptionsResponse" type="tns:readCustomerSubscriptionsResponse"/>
+  <xs:element name="readEmakerContractStatus" type="tns:readEmakerContractStatus"/>
+  <xs:element name="readEmakerContractStatusResponse" type="tns:readEmakerContractStatusResponse"/>
+  <xs:element name="readEproductContractActivations" type="tns:readEproductContractActivations"/>
+  <xs:element name="readEproductContractActivationsResponse" type="tns:readEproductContractActivationsResponse"/>
+  <xs:element name="readProductId" type="tns:readProductId"/>
+  <xs:element name="readProductIdResponse" type="tns:readProductIdResponse"/>
+  <xs:element name="readProductTitle" type="tns:readProductTitle"/>
+  <xs:element name="readProductTitleResponse" type="tns:readProductTitleResponse"/>
+  <xs:element name="readTradeJournal" type="tns:readTradeJournal"/>
+  <xs:element name="readTradeJournalResponse" type="tns:readTradeJournalResponse"/>
+  <xs:element name="terminateProduct" type="tns:terminateProduct"/>
+  <xs:element name="terminateProductResponse" type="tns:terminateProductResponse"/>
+  <xs:complexType name="readTradeJournal">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="username" type="xs:string"/>
+      <xs:element minOccurs="0" name="password" type="xs:string"/>
+      <xs:element minOccurs="0" name="mandatorId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="readTradeJournalResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="tradeJournal" type="tns:tradeJournal"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="tradeJournal">
+    <xs:complexContent>
+      <xs:extension base="tns:baseEpsbBo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="marketingCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="productId" type="xs:string"/>
+          <xs:element minOccurs="0" name="productShortname" type="xs:string"/>
+          <xs:element minOccurs="0" name="productTitle" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType abstract="true" name="baseEpsbBo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="customerId" type="xs:long"/>
+      <xs:element minOccurs="0" name="customerIdStr" type="xs:string"/>
+      <xs:element minOccurs="0" name="mandatorId" type="xs:string"/>
+      <xs:element minOccurs="0" name="result" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="technicalObject" type="tns:technicalObject"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="technicalObject">
+    <xs:sequence>
+      <xs:element name="errorCode" type="xs:int"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="errorMessages" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="password" type="xs:string"/>
+      <xs:element minOccurs="0" name="username" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EpsbExceptionFaultType">
+    <xs:sequence>
+      <xs:element name="errorCode" nillable="true" type="xs:int"/>
+      <xs:element minOccurs="0" name="errorMessage" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="changeEproductActivation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="username" type="xs:string"/>
+      <xs:element minOccurs="0" name="password" type="xs:string"/>
+      <xs:element minOccurs="0" name="mandatorId" type="xs:string"/>
+      <xs:element minOccurs="0" name="contractId" type="xs:long"/>
+      <xs:element minOccurs="0" name="serialNumber" type="xs:string"/>
+      <xs:element minOccurs="0" name="activeYN" type="xs:string"/>
+      <xs:element minOccurs="0" name="note" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="changeEproductActivationResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="saved" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="readProductId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="username" type="xs:string"/>
+      <xs:element minOccurs="0" name="password" type="xs:string"/>
+      <xs:element minOccurs="0" name="mandatorId" type="xs:string"/>
+      <xs:element minOccurs="0" name="productTitle" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="readProductIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="productId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="hasContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="username" type="xs:string"/>
+      <xs:element minOccurs="0" name="password" type="xs:string"/>
+      <xs:element minOccurs="0" name="mandatorId" type="xs:string"/>
+      <xs:element minOccurs="0" name="customerId" type="xs:long"/>
+      <xs:element minOccurs="0" name="productId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="hasContractResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="statusCode" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="terminateProduct">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="username" type="xs:string"/>
+      <xs:element minOccurs="0" name="password" type="xs:string"/>
+      <xs:element minOccurs="0" name="mandatorId" type="xs:string"/>
+      <xs:element minOccurs="0" name="customerId" type="xs:long"/>
+      <xs:element minOccurs="0" name="productId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="terminateProductResponse">
+    <xs:sequence>
+      <xs:element name="statusCode" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="readCustomerSubscriptions">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="username" type="xs:string"/>
+      <xs:element minOccurs="0" name="password" type="xs:string"/>
+      <xs:element minOccurs="0" name="mandatorId" type="xs:string"/>
+      <xs:element minOccurs="0" name="customerIdStr" type="xs:string"/>
+      <xs:element minOccurs="0" name="eMail" type="xs:string"/>
+      <xs:element minOccurs="0" name="zipCode" type="xs:string"/>
+      <xs:element minOccurs="0" name="contractId" type="xs:long"/>
+      <xs:element minOccurs="0" name="globalOrderId" type="xs:string"/>
+      <xs:element minOccurs="0" name="sourceId" type="xs:string"/>
+      <xs:element minOccurs="0" name="orderNumber" type="xs:string"/>
+      <xs:element minOccurs="0" name="productId" type="xs:string"/>
+      <xs:element minOccurs="0" name="productShortname" type="xs:string"/>
+      <xs:element minOccurs="0" name="filterLogic" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="readCustomerSubscriptionsResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="customerSubscriptions" type="tns:CustomerSubscription"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CustomerSubscription">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="productId" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="productShortname" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="productTitle" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="statusCode" nillable="true" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="statusDescription" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="mandatorId" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="customerId" nillable="true" type="xs:long"/>
+      <xs:element minOccurs="0" name="customerIdStr" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="contractId" nillable="true" type="xs:long"/>
+      <xs:element minOccurs="0" name="globalOrderId" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="sourceId" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="orderNumber" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="hasContractByEmail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="username" type="xs:string"/>
+      <xs:element minOccurs="0" name="password" type="xs:string"/>
+      <xs:element minOccurs="0" name="mandatorId" type="xs:string"/>
+      <xs:element minOccurs="0" name="productId" type="xs:string"/>
+      <xs:element minOccurs="0" name="email" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="hasContractByEmailResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="statusCode" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="readCurrentContracts">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="username" type="xs:string"/>
+      <xs:element minOccurs="0" name="password" type="xs:string"/>
+      <xs:element minOccurs="0" name="userShortName" type="xs:string"/>
+      <xs:element minOccurs="0" name="viewName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="readCurrentContractsResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="contract" type="tns:Contract"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Contract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="mandatorId" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="customerId" nillable="true" type="xs:long"/>
+      <xs:element minOccurs="0" name="contractId" nillable="true" type="xs:long"/>
+      <xs:element minOccurs="0" name="product" nillable="true" type="tns:tradeJournal"/>
+      <xs:element minOccurs="0" name="invoice" nillable="true" type="tns:Invoice"/>
+      <xs:element minOccurs="0" name="creditCard" nillable="true" type="tns:CreditCard"/>
+      <xs:element minOccurs="0" name="submandatorId" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="referenceNo" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="contractStatus" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="trialPeriodEndDate" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="cancellationDate" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="orderDate" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="cancellationReason" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="courseLevel" nillable="true" type="xs:long"/>
+      <xs:element minOccurs="0" name="priceGroupNumber" nillable="true" type="xs:long"/>
+      <xs:element minOccurs="0" name="subscriptionPeriod" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="invoiceInterval" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="address" nillable="true" type="tns:address"/>
+      <xs:element minOccurs="0" name="addressDelivery" nillable="true" type="tns:address"/>
+      <xs:element minOccurs="0" name="addressInvoice" nillable="true" type="tns:address"/>
+      <xs:element minOccurs="0" name="accounting" nillable="true" type="tns:Accounting"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Invoice">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="invoiceText" nillable="true" type="xs:string"/>
+      <xs:element name="itemAmount" nillable="true" type="xs:double"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CreditCard">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ccHolder" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="pspInstituteId" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="maskedCcNumber" nillable="true" type="xs:string"/>
+      <xs:element name="expiryMonth" nillable="true" type="xs:int"/>
+      <xs:element name="expiryYear" nillable="true" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="address">
+    <xs:complexContent>
+      <xs:extension base="tns:baseEpsbBo">
+        <xs:sequence>
+          <xs:element name="addressCheck" type="xs:int"/>
+          <xs:element minOccurs="0" name="contact" type="tns:Contact"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="countries" nillable="true" type="tns:Country"/>
+          <xs:element minOccurs="0" name="person" type="tns:Person"/>
+          <xs:element minOccurs="0" name="postalAddress" type="tns:PostalAddress"/>
+          <xs:element minOccurs="0" name="tradeJournal" type="tns:tradeJournal"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="zipCodes" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Contact">
+    <xs:complexContent>
+      <xs:extension base="tns:baseEpsbBo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="eMail" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="phone" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="fax" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="mobile" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="internet" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Country">
+    <xs:complexContent>
+      <xs:extension base="tns:baseEpsbBo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="nameD" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="nameGB" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="nameF" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="countryCode" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="countryCodeIso" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Person">
+    <xs:complexContent>
+      <xs:extension base="tns:baseEpsbBo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="salutation" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="gender" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="title" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="firstName" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="lastName" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="firstCompany" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="secondCompany" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="additionalAddress" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="PostalAddress">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="street" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="streetZipCode" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="streetCity" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="postbox" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="postboxZipCode" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="postboxCity" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="majorCustomerZipCode" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="majorCustomerCity" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="country" nillable="true" type="tns:Country"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Accounting">
+    <xs:sequence>
+      <xs:element name="salesAmount" nillable="true" type="xs:double"/>
+      <xs:element name="cancellationAmount" nillable="true" type="xs:double"/>
+      <xs:element name="paymentAmount" nillable="true" type="xs:double"/>
+      <xs:element minOccurs="0" name="paymentMethod" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="hasContractByProductShortname">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="username" type="xs:string"/>
+      <xs:element minOccurs="0" name="password" type="xs:string"/>
+      <xs:element minOccurs="0" name="mandatorId" type="xs:string"/>
+      <xs:element minOccurs="0" name="customerId" type="xs:long"/>
+      <xs:element minOccurs="0" name="productShortname" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="hasContractByProductShortnameResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="statusCode" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="readEproductContractActivations">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="username" type="xs:string"/>
+      <xs:element minOccurs="0" name="password" type="xs:string"/>
+      <xs:element minOccurs="0" name="mandatorId" type="xs:string"/>
+      <xs:element minOccurs="0" name="customerId" type="xs:long"/>
+      <xs:element minOccurs="0" name="subMandatorId" type="xs:string"/>
+      <xs:element minOccurs="0" name="productTypes" type="xs:string"/>
+      <xs:element minOccurs="0" name="marketingCodes" type="xs:string"/>
+      <xs:element minOccurs="0" name="productIds" type="xs:string"/>
+      <xs:element minOccurs="0" name="contractId" type="xs:long"/>
+      <xs:element minOccurs="0" name="contractStatus" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="readEproductContractActivationsResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="eproductContracts" type="tns:EproductActivation"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EproductActivation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="productName" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="serialNumber" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="note" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="activationCode" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="activeYN" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="emaId" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="contractId" nillable="true" type="xs:long"/>
+      <xs:element minOccurs="0" name="productType" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="readProductTitle">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="username" type="xs:string"/>
+      <xs:element minOccurs="0" name="password" type="xs:string"/>
+      <xs:element minOccurs="0" name="mandatorId" type="xs:string"/>
+      <xs:element minOccurs="0" name="productId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="readProductTitleResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="productTitle" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="readEmakerContractStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="username" type="xs:string"/>
+      <xs:element minOccurs="0" name="password" type="xs:string"/>
+      <xs:element minOccurs="0" name="mandatorId" type="xs:string"/>
+      <xs:element minOccurs="0" name="serialNumber" type="xs:string"/>
+      <xs:element minOccurs="0" name="activationCode" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="readEmakerContractStatusResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="statusCode" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="hasContractByCustomerEmail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="username" type="xs:string"/>
+      <xs:element minOccurs="0" name="password" type="xs:string"/>
+      <xs:element minOccurs="0" name="mandatorId" type="xs:string"/>
+      <xs:element minOccurs="0" name="productId" type="xs:string"/>
+      <xs:element minOccurs="0" name="customerIdStr" type="xs:string"/>
+      <xs:element minOccurs="0" name="email" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="hasContractByCustomerEmailResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="statusCode" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EpsbException" nillable="true" type="tns:EpsbExceptionFaultType"/>
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="terminateProductResponse">
+    <wsdl:part element="tns:terminateProductResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hasContract">
+    <wsdl:part element="tns:hasContract" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="readTradeJournal">
+    <wsdl:part element="tns:readTradeJournal" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="readProductTitle">
+    <wsdl:part element="tns:readProductTitle" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="changeEproductActivation">
+    <wsdl:part element="tns:changeEproductActivation" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="readEmakerContractStatusResponse">
+    <wsdl:part element="tns:readEmakerContractStatusResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="readEproductContractActivations">
+    <wsdl:part element="tns:readEproductContractActivations" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hasContractByProductShortname">
+    <wsdl:part element="tns:hasContractByProductShortname" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="changeEproductActivationResponse">
+    <wsdl:part element="tns:changeEproductActivationResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="readProductTitleResponse">
+    <wsdl:part element="tns:readProductTitleResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="readEproductContractActivationsResponse">
+    <wsdl:part element="tns:readEproductContractActivationsResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="readProductIdResponse">
+    <wsdl:part element="tns:readProductIdResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="readCustomerSubscriptions">
+    <wsdl:part element="tns:readCustomerSubscriptions" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="readCurrentContractsResponse">
+    <wsdl:part element="tns:readCurrentContractsResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hasContractByEmail">
+    <wsdl:part element="tns:hasContractByEmail" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="readCurrentContracts">
+    <wsdl:part element="tns:readCurrentContracts" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="EpsbException">
+    <wsdl:part element="tns:EpsbException" name="EpsbException">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="readTradeJournalResponse">
+    <wsdl:part element="tns:readTradeJournalResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="terminateProduct">
+    <wsdl:part element="tns:terminateProduct" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="readEmakerContractStatus">
+    <wsdl:part element="tns:readEmakerContractStatus" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hasContractByCustomerEmail">
+    <wsdl:part element="tns:hasContractByCustomerEmail" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="readProductId">
+    <wsdl:part element="tns:readProductId" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hasContractResponse">
+    <wsdl:part element="tns:hasContractResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hasContractByProductShortnameResponse">
+    <wsdl:part element="tns:hasContractByProductShortnameResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hasContractByEmailResponse">
+    <wsdl:part element="tns:hasContractByEmailResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hasContractByCustomerEmailResponse">
+    <wsdl:part element="tns:hasContractByCustomerEmailResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="readCustomerSubscriptionsResponse">
+    <wsdl:part element="tns:readCustomerSubscriptionsResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="Contract">
+    <wsdl:operation name="readTradeJournal">
+      <wsdl:input message="tns:readTradeJournal" name="readTradeJournal">
+    </wsdl:input>
+      <wsdl:output message="tns:readTradeJournalResponse" name="readTradeJournalResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:EpsbException" name="EpsbException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="changeEproductActivation">
+      <wsdl:input message="tns:changeEproductActivation" name="changeEproductActivation">
+    </wsdl:input>
+      <wsdl:output message="tns:changeEproductActivationResponse" name="changeEproductActivationResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:EpsbException" name="EpsbException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="readProductId">
+      <wsdl:input message="tns:readProductId" name="readProductId">
+    </wsdl:input>
+      <wsdl:output message="tns:readProductIdResponse" name="readProductIdResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:EpsbException" name="EpsbException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="hasContract">
+      <wsdl:input message="tns:hasContract" name="hasContract">
+    </wsdl:input>
+      <wsdl:output message="tns:hasContractResponse" name="hasContractResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:EpsbException" name="EpsbException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="terminateProduct">
+      <wsdl:input message="tns:terminateProduct" name="terminateProduct">
+    </wsdl:input>
+      <wsdl:output message="tns:terminateProductResponse" name="terminateProductResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:EpsbException" name="EpsbException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="readCustomerSubscriptions">
+      <wsdl:input message="tns:readCustomerSubscriptions" name="readCustomerSubscriptions">
+    </wsdl:input>
+      <wsdl:output message="tns:readCustomerSubscriptionsResponse" name="readCustomerSubscriptionsResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:EpsbException" name="EpsbException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="hasContractByEmail">
+      <wsdl:input message="tns:hasContractByEmail" name="hasContractByEmail">
+    </wsdl:input>
+      <wsdl:output message="tns:hasContractByEmailResponse" name="hasContractByEmailResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:EpsbException" name="EpsbException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="readCurrentContracts">
+      <wsdl:input message="tns:readCurrentContracts" name="readCurrentContracts">
+    </wsdl:input>
+      <wsdl:output message="tns:readCurrentContractsResponse" name="readCurrentContractsResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:EpsbException" name="EpsbException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="hasContractByProductShortname">
+      <wsdl:input message="tns:hasContractByProductShortname" name="hasContractByProductShortname">
+    </wsdl:input>
+      <wsdl:output message="tns:hasContractByProductShortnameResponse" name="hasContractByProductShortnameResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:EpsbException" name="EpsbException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="readEproductContractActivations">
+      <wsdl:input message="tns:readEproductContractActivations" name="readEproductContractActivations">
+    </wsdl:input>
+      <wsdl:output message="tns:readEproductContractActivationsResponse" name="readEproductContractActivationsResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:EpsbException" name="EpsbException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="readProductTitle">
+      <wsdl:input message="tns:readProductTitle" name="readProductTitle">
+    </wsdl:input>
+      <wsdl:output message="tns:readProductTitleResponse" name="readProductTitleResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:EpsbException" name="EpsbException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="readEmakerContractStatus">
+      <wsdl:input message="tns:readEmakerContractStatus" name="readEmakerContractStatus">
+    </wsdl:input>
+      <wsdl:output message="tns:readEmakerContractStatusResponse" name="readEmakerContractStatusResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:EpsbException" name="EpsbException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="hasContractByCustomerEmail">
+      <wsdl:input message="tns:hasContractByCustomerEmail" name="hasContractByCustomerEmail">
+    </wsdl:input>
+      <wsdl:output message="tns:hasContractByCustomerEmailResponse" name="hasContractByCustomerEmailResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:EpsbException" name="EpsbException">
+    </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ContractServiceSoapBinding" type="tns:Contract">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="changeEproductActivation">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="changeEproductActivation">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="changeEproductActivationResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="EpsbException">
+        <soap:fault name="EpsbException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="readTradeJournal">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="readTradeJournal">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="readTradeJournalResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="EpsbException">
+        <soap:fault name="EpsbException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="readProductId">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="readProductId">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="readProductIdResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="EpsbException">
+        <soap:fault name="EpsbException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="hasContract">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="hasContract">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="hasContractResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="EpsbException">
+        <soap:fault name="EpsbException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="terminateProduct">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="terminateProduct">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="terminateProductResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="EpsbException">
+        <soap:fault name="EpsbException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="readCustomerSubscriptions">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="readCustomerSubscriptions">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="readCustomerSubscriptionsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="EpsbException">
+        <soap:fault name="EpsbException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="hasContractByEmail">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="hasContractByEmail">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="hasContractByEmailResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="EpsbException">
+        <soap:fault name="EpsbException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="readCurrentContracts">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="readCurrentContracts">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="readCurrentContractsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="EpsbException">
+        <soap:fault name="EpsbException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="hasContractByProductShortname">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="hasContractByProductShortname">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="hasContractByProductShortnameResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="EpsbException">
+        <soap:fault name="EpsbException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="readEproductContractActivations">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="readEproductContractActivations">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="readEproductContractActivationsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="EpsbException">
+        <soap:fault name="EpsbException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="readProductTitle">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="readProductTitle">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="readProductTitleResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="EpsbException">
+        <soap:fault name="EpsbException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="readEmakerContractStatus">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="readEmakerContractStatus">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="readEmakerContractStatusResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="EpsbException">
+        <soap:fault name="EpsbException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="hasContractByCustomerEmail">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="hasContractByCustomerEmail">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="hasContractByCustomerEmailResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="EpsbException">
+        <soap:fault name="EpsbException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ContractService">
+    <wsdl:port binding="tns:ContractServiceSoapBinding" name="ContractPort">
+      <soap:address location="http://localhost:31080/epsb-ws/ContractService/Contract"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

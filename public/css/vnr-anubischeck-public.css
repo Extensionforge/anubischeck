@@ -1,0 +1,30 @@
+/**
+ * All of the CSS for your public-facing functionality should be
+ * included in this file.
+ */
+.vnr_left {width:50%;float:left;}
+.vnr_right {width:50%;float:left;}
+
+.produktboxbutton {
+    background: #f7a54f!important;
+    border: none;
+    padding: 10px 20px;
+    color: #000!important;
+    font-size: 24px!important;
+    line-height: 1.55em;
+}
+.bp-verified-badge{mask:none!important;background:none!important;
+    background-color: #ec971f !important;
+  display: inline;
+padding: .2em .6em .2em;
+font-size: 75%;
+font-weight: bold;
+line-height: 1;
+color: #fff;
+text-align: center;
+white-space: nowrap;
+vertical-align: middle;
+border-radius: .25em;}
+.bp-verified-badge::before { 
+  content: "VIP";
+}

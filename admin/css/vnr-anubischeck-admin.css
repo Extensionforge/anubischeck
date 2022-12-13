@@ -1,0 +1,28 @@
+#vnr_enter_customernr_submit{float:right;}
+.vnr_left {width:50%;float:left;}
+.vnr_right {width:48%;float:right;}
+
+.produktboxbutton {
+    background: #f7a54f!important;
+    border: none;
+    padding: 10px 20px;
+    color: #000!important;
+    font-size: 24px!important;
+    line-height: 1.55em;
+}
+.bp-verified-badge{mask:none!important;background:none!important;
+    background-color: #ec971f !important;
+  display: inline;
+padding: 5px;
+font-size: 13px;
+height:14px!important;
+font-weight: bold;
+line-height: 1;
+color: #fff;
+text-align: center;
+white-space: nowrap;
+vertical-align: middle;
+border-radius: .25em;}
+.bp-verified-badge::before { 
+  content: "VIP";
+}

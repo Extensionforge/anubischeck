@@ -1,0 +1,612 @@
+Date: 2022-12-12 18:31:08
+Last Request: 
+=============
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://contract.ws.epsb.bitech.de/"><SOAP-ENV:Body><ns1:readCustomerSubscriptions><username>WS_HGB</username><password>z4GK99!$L7</password><mandatorId>VNR</mandatorId><eMail>michael.landmann@berlin.de</eMail><zipCode></zipCode><filterLogic>NO_CLOSED_CONTRACTS</filterLogic></ns1:readCustomerSubscriptions></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+Last Request Headers: 
+=====================
+POST /epsb-ws/ContractService/Contract HTTP/1.1
+Host: epsb-ws.verlagsinfo.de
+Connection: Keep-Alive
+User-Agent: PHP-SOAP/8.0.26
+Content-Type: text/xml; charset=utf-8
+SOAPAction: ""
+Content-Length: 471
+
+
+
+Last Response: 
+=====================
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Body><soap:Fault><faultcode>soap:Server</faultcode><faultstring>WEB-NO-SUBSCRIPTIONS-FOUND: es wurde kein Abonnement anhand der Suchkriterien ermittelt</faultstring><detail><ns2:EpsbException xmlns:ns2="http://contract.ws.epsb.bitech.de/"><errorCode>2</errorCode><errorMessage>WEB-NO-SUBSCRIPTIONS-FOUND: es wurde kein Abonnement anhand der Suchkriterien ermittelt</errorMessage></ns2:EpsbException></detail></soap:Fault></soap:Body></soap:Envelope>
+
+Last Response Headers: 
+=====================
+HTTP/1.1 500 Internal Server Error
+Date: Mon, 12 Dec 2022 18:31:08 GMT
+Server: WildFly/10
+X-Powered-By: Undertow/1
+Content-Type: text/xml;charset=UTF-8
+Content-Length: 525
+Connection: close
+
+
+Date: 2022-12-12 18:33:43
+Last Request: 
+=============
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://contract.ws.epsb.bitech.de/"><SOAP-ENV:Body><ns1:readCustomerSubscriptions><username>WS_HGB</username><password>z4GK99!$L7</password><mandatorId>VNR</mandatorId><eMail>michael.landmann@berlin.de</eMail><zipCode></zipCode><filterLogic>NO_CLOSED_CONTRACTS</filterLogic></ns1:readCustomerSubscriptions></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+Last Request Headers: 
+=====================
+POST /epsb-ws/ContractService/Contract HTTP/1.1
+Host: epsb-ws.verlagsinfo.de
+Connection: Keep-Alive
+User-Agent: PHP-SOAP/8.0.26
+Content-Type: text/xml; charset=utf-8
+SOAPAction: ""
+Content-Length: 471
+
+
+
+Last Response: 
+=====================
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Body><soap:Fault><faultcode>soap:Server</faultcode><faultstring>WEB-NO-SUBSCRIPTIONS-FOUND: es wurde kein Abonnement anhand der Suchkriterien ermittelt</faultstring><detail><ns2:EpsbException xmlns:ns2="http://contract.ws.epsb.bitech.de/"><errorCode>2</errorCode><errorMessage>WEB-NO-SUBSCRIPTIONS-FOUND: es wurde kein Abonnement anhand der Suchkriterien ermittelt</errorMessage></ns2:EpsbException></detail></soap:Fault></soap:Body></soap:Envelope>
+
+Last Response Headers: 
+=====================
+HTTP/1.1 500 Internal Server Error
+Date: Mon, 12 Dec 2022 18:33:43 GMT
+Server: WildFly/10
+X-Powered-By: Undertow/1
+Content-Type: text/xml;charset=UTF-8
+Content-Length: 525
+Connection: close
+
+
+Date: 2022-12-12 18:38:32
+Last Request: 
+=============
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://contract.ws.epsb.bitech.de/"><SOAP-ENV:Body><ns1:readCustomerSubscriptions><username>WS_HGB</username><password>z4GK99!$L7</password><mandatorId>VNR</mandatorId><eMail>michael.landmann@berlin.de</eMail><zipCode></zipCode><filterLogic>NO_CLOSED_CONTRACTS</filterLogic></ns1:readCustomerSubscriptions></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+Last Request Headers: 
+=====================
+POST /epsb-ws/ContractService/Contract HTTP/1.1
+Host: epsb-ws.verlagsinfo.de
+Connection: Keep-Alive
+User-Agent: PHP-SOAP/8.0.26
+Content-Type: text/xml; charset=utf-8
+SOAPAction: ""
+Content-Length: 471
+
+
+
+Last Response: 
+=====================
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Body><soap:Fault><faultcode>soap:Server</faultcode><faultstring>WEB-NO-SUBSCRIPTIONS-FOUND: es wurde kein Abonnement anhand der Suchkriterien ermittelt</faultstring><detail><ns2:EpsbException xmlns:ns2="http://contract.ws.epsb.bitech.de/"><errorCode>2</errorCode><errorMessage>WEB-NO-SUBSCRIPTIONS-FOUND: es wurde kein Abonnement anhand der Suchkriterien ermittelt</errorMessage></ns2:EpsbException></detail></soap:Fault></soap:Body></soap:Envelope>
+
+Last Response Headers: 
+=====================
+HTTP/1.1 500 Internal Server Error
+Date: Mon, 12 Dec 2022 18:38:32 GMT
+Server: WildFly/10
+X-Powered-By: Undertow/1
+Content-Type: text/xml;charset=UTF-8
+Content-Length: 525
+Connection: close
+
+
+Date: 2022-12-12 18:39:25
+Last Request: 
+=============
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://contract.ws.epsb.bitech.de/"><SOAP-ENV:Body><ns1:readCustomerSubscriptions><username>WS_HGB</username><password>z4GK99!$L7</password><mandatorId>VNR</mandatorId><eMail>michael.landmann@berlin.de</eMail><zipCode></zipCode><filterLogic>NO_CLOSED_CONTRACTS</filterLogic></ns1:readCustomerSubscriptions></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+Last Request Headers: 
+=====================
+POST /epsb-ws/ContractService/Contract HTTP/1.1
+Host: epsb-ws.verlagsinfo.de
+Connection: Keep-Alive
+User-Agent: PHP-SOAP/8.0.26
+Content-Type: text/xml; charset=utf-8
+SOAPAction: ""
+Content-Length: 471
+
+
+
+Last Response: 
+=====================
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Body><soap:Fault><faultcode>soap:Server</faultcode><faultstring>WEB-NO-SUBSCRIPTIONS-FOUND: es wurde kein Abonnement anhand der Suchkriterien ermittelt</faultstring><detail><ns2:EpsbException xmlns:ns2="http://contract.ws.epsb.bitech.de/"><errorCode>2</errorCode><errorMessage>WEB-NO-SUBSCRIPTIONS-FOUND: es wurde kein Abonnement anhand der Suchkriterien ermittelt</errorMessage></ns2:EpsbException></detail></soap:Fault></soap:Body></soap:Envelope>
+
+Last Response Headers: 
+=====================
+HTTP/1.1 500 Internal Server Error
+Date: Mon, 12 Dec 2022 18:39:24 GMT
+Server: WildFly/10
+X-Powered-By: Undertow/1
+Content-Type: text/xml;charset=UTF-8
+Content-Length: 525
+Connection: close
+
+
+Date: 2022-12-12 18:40:31
+Last Request: 
+=============
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://contract.ws.epsb.bitech.de/"><SOAP-ENV:Body><ns1:readCustomerSubscriptions><username>WS_HGB</username><password>z4GK99!$L7</password><mandatorId>VNR</mandatorId><eMail>michael.landmann@berlin.de</eMail><zipCode></zipCode><filterLogic>NO_CLOSED_CONTRACTS</filterLogic></ns1:readCustomerSubscriptions></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+Last Request Headers: 
+=====================
+POST /epsb-ws/ContractService/Contract HTTP/1.1
+Host: epsb-ws.verlagsinfo.de
+Connection: Keep-Alive
+User-Agent: PHP-SOAP/8.0.26
+Content-Type: text/xml; charset=utf-8
+SOAPAction: ""
+Content-Length: 471
+
+
+
+Last Response: 
+=====================
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Body><soap:Fault><faultcode>soap:Server</faultcode><faultstring>WEB-NO-SUBSCRIPTIONS-FOUND: es wurde kein Abonnement anhand der Suchkriterien ermittelt</faultstring><detail><ns2:EpsbException xmlns:ns2="http://contract.ws.epsb.bitech.de/"><errorCode>2</errorCode><errorMessage>WEB-NO-SUBSCRIPTIONS-FOUND: es wurde kein Abonnement anhand der Suchkriterien ermittelt</errorMessage></ns2:EpsbException></detail></soap:Fault></soap:Body></soap:Envelope>
+
+Last Response Headers: 
+=====================
+HTTP/1.1 500 Internal Server Error
+Date: Mon, 12 Dec 2022 18:40:31 GMT
+Server: WildFly/10
+X-Powered-By: Undertow/1
+Content-Type: text/xml;charset=UTF-8
+Content-Length: 525
+Connection: close
+
+
+Date: 2022-12-12 20:19:38
+Last Request: 
+=============
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://contract.ws.epsb.bitech.de/"><SOAP-ENV:Body><ns1:readCustomerSubscriptions><username>WS_HGB</username><password>z4GK99!$L7</password><mandatorId>VNR</mandatorId><eMail>michael.landmann@berlin.de</eMail><zipCode></zipCode><filterLogic>NO_CLOSED_CONTRACTS</filterLogic></ns1:readCustomerSubscriptions></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+Last Request Headers: 
+=====================
+POST /epsb-ws/ContractService/Contract HTTP/1.1
+Host: epsb-ws.verlagsinfo.de
+Connection: Keep-Alive
+User-Agent: PHP-SOAP/8.0.26
+Content-Type: text/xml; charset=utf-8
+SOAPAction: ""
+Content-Length: 471
+
+
+
+Last Response: 
+=====================
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Body><soap:Fault><faultcode>soap:Server</faultcode><faultstring>WEB-NO-SUBSCRIPTIONS-FOUND: es wurde kein Abonnement anhand der Suchkriterien ermittelt</faultstring><detail><ns2:EpsbException xmlns:ns2="http://contract.ws.epsb.bitech.de/"><errorCode>2</errorCode><errorMessage>WEB-NO-SUBSCRIPTIONS-FOUND: es wurde kein Abonnement anhand der Suchkriterien ermittelt</errorMessage></ns2:EpsbException></detail></soap:Fault></soap:Body></soap:Envelope>
+
+Last Response Headers: 
+=====================
+HTTP/1.1 500 Internal Server Error
+Date: Mon, 12 Dec 2022 20:19:38 GMT
+Server: WildFly/10
+X-Powered-By: Undertow/1
+Content-Type: text/xml;charset=UTF-8
+Content-Length: 525
+Connection: close
+
+
+Date: 2022-12-12 20:35:42
+Last Request: 
+=============
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://contract.ws.epsb.bitech.de/"><SOAP-ENV:Body><ns1:readCustomerSubscriptions><username>WS_HGB</username><password>z4GK99!$L7</password><mandatorId>VNR</mandatorId><eMail>michael.landmann@berlin.de</eMail><zipCode></zipCode><filterLogic>NO_CLOSED_CONTRACTS</filterLogic></ns1:readCustomerSubscriptions></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+Last Request Headers: 
+=====================
+POST /epsb-ws/ContractService/Contract HTTP/1.1
+Host: epsb-ws.verlagsinfo.de
+Connection: Keep-Alive
+User-Agent: PHP-SOAP/8.0.26
+Content-Type: text/xml; charset=utf-8
+SOAPAction: ""
+Content-Length: 471
+
+
+
+Last Response: 
+=====================
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Body><soap:Fault><faultcode>soap:Server</faultcode><faultstring>WEB-NO-SUBSCRIPTIONS-FOUND: es wurde kein Abonnement anhand der Suchkriterien ermittelt</faultstring><detail><ns2:EpsbException xmlns:ns2="http://contract.ws.epsb.bitech.de/"><errorCode>2</errorCode><errorMessage>WEB-NO-SUBSCRIPTIONS-FOUND: es wurde kein Abonnement anhand der Suchkriterien ermittelt</errorMessage></ns2:EpsbException></detail></soap:Fault></soap:Body></soap:Envelope>
+
+Last Response Headers: 
+=====================
+HTTP/1.1 500 Internal Server Error
+Date: Mon, 12 Dec 2022 20:35:42 GMT
+Server: WildFly/10
+X-Powered-By: Undertow/1
+Content-Type: text/xml;charset=UTF-8
+Content-Length: 525
+Connection: close
+
+
+Date: 2022-12-12 20:39:37
+Last Request: 
+=============
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://contract.ws.epsb.bitech.de/"><SOAP-ENV:Body><ns1:readCustomerSubscriptions><username>WS_HGB</username><password>z4GK99!$L7</password><mandatorId>VNR</mandatorId><eMail>michael.landmann@berlin.de</eMail><zipCode></zipCode><filterLogic>NO_CLOSED_CONTRACTS</filterLogic></ns1:readCustomerSubscriptions></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+Last Request Headers: 
+=====================
+POST /epsb-ws/ContractService/Contract HTTP/1.1
+Host: epsb-ws.verlagsinfo.de
+Connection: Keep-Alive
+User-Agent: PHP-SOAP/8.0.26
+Content-Type: text/xml; charset=utf-8
+SOAPAction: ""
+Content-Length: 471
+
+
+
+Last Response: 
+=====================
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Body><soap:Fault><faultcode>soap:Server</faultcode><faultstring>WEB-NO-SUBSCRIPTIONS-FOUND: es wurde kein Abonnement anhand der Suchkriterien ermittelt</faultstring><detail><ns2:EpsbException xmlns:ns2="http://contract.ws.epsb.bitech.de/"><errorCode>2</errorCode><errorMessage>WEB-NO-SUBSCRIPTIONS-FOUND: es wurde kein Abonnement anhand der Suchkriterien ermittelt</errorMessage></ns2:EpsbException></detail></soap:Fault></soap:Body></soap:Envelope>
+
+Last Response Headers: 
+=====================
+HTTP/1.1 500 Internal Server Error
+Date: Mon, 12 Dec 2022 20:39:37 GMT
+Server: WildFly/10
+X-Powered-By: Undertow/1
+Content-Type: text/xml;charset=UTF-8
+Content-Length: 525
+Connection: close
+
+
+Date: 2022-12-12 20:39:45
+Last Request: 
+=============
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://contract.ws.epsb.bitech.de/"><SOAP-ENV:Body><ns1:readCustomerSubscriptions><username>WS_HGB</username><password>z4GK99!$L7</password><mandatorId>VNR</mandatorId><eMail>michael.landmann@berlin.de</eMail><zipCode>12345</zipCode><filterLogic>NO_CLOSED_CONTRACTS</filterLogic></ns1:readCustomerSubscriptions></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+Last Request Headers: 
+=====================
+POST /epsb-ws/ContractService/Contract HTTP/1.1
+Host: epsb-ws.verlagsinfo.de
+Connection: Keep-Alive
+User-Agent: PHP-SOAP/8.0.26
+Content-Type: text/xml; charset=utf-8
+SOAPAction: ""
+Content-Length: 476
+
+
+
+Last Response: 
+=====================
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Body><soap:Fault><faultcode>soap:Server</faultcode><faultstring>WEB-NO-SUBSCRIPTIONS-FOUND: es wurde kein Abonnement anhand der Suchkriterien ermittelt</faultstring><detail><ns2:EpsbException xmlns:ns2="http://contract.ws.epsb.bitech.de/"><errorCode>2</errorCode><errorMessage>WEB-NO-SUBSCRIPTIONS-FOUND: es wurde kein Abonnement anhand der Suchkriterien ermittelt</errorMessage></ns2:EpsbException></detail></soap:Fault></soap:Body></soap:Envelope>
+
+Last Response Headers: 
+=====================
+HTTP/1.1 500 Internal Server Error
+Date: Mon, 12 Dec 2022 20:39:45 GMT
+Server: WildFly/10
+X-Powered-By: Undertow/1
+Content-Type: text/xml;charset=UTF-8
+Content-Length: 525
+Connection: close
+
+
+Date: 2022-12-12 20:39:49
+Last Request: 
+=============
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://contract.ws.epsb.bitech.de/"><SOAP-ENV:Body><ns1:readCustomerSubscriptions><username>WS_HGB</username><password>z4GK99!$L7</password><mandatorId>VNR</mandatorId><eMail>michael.landmann@berlin.de</eMail><zipCode>12345</zipCode><filterLogic>NO_CLOSED_CONTRACTS</filterLogic></ns1:readCustomerSubscriptions></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+Last Request Headers: 
+=====================
+POST /epsb-ws/ContractService/Contract HTTP/1.1
+Host: epsb-ws.verlagsinfo.de
+Connection: Keep-Alive
+User-Agent: PHP-SOAP/8.0.26
+Content-Type: text/xml; charset=utf-8
+SOAPAction: ""
+Content-Length: 476
+
+
+
+Last Response: 
+=====================
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Body><soap:Fault><faultcode>soap:Server</faultcode><faultstring>WEB-NO-SUBSCRIPTIONS-FOUND: es wurde kein Abonnement anhand der Suchkriterien ermittelt</faultstring><detail><ns2:EpsbException xmlns:ns2="http://contract.ws.epsb.bitech.de/"><errorCode>2</errorCode><errorMessage>WEB-NO-SUBSCRIPTIONS-FOUND: es wurde kein Abonnement anhand der Suchkriterien ermittelt</errorMessage></ns2:EpsbException></detail></soap:Fault></soap:Body></soap:Envelope>
+
+Last Response Headers: 
+=====================
+HTTP/1.1 500 Internal Server Error
+Date: Mon, 12 Dec 2022 20:39:49 GMT
+Server: WildFly/10
+X-Powered-By: Undertow/1
+Content-Type: text/xml;charset=UTF-8
+Content-Length: 525
+Connection: close
+
+
+Date: 2022-12-12 20:41:07
+Last Request: 
+=============
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://contract.ws.epsb.bitech.de/"><SOAP-ENV:Body><ns1:readCustomerSubscriptions><username>WS_HGB</username><password>z4GK99!$L7</password><mandatorId>VNR</mandatorId><eMail>michael.landmann@berlin.de</eMail><zipCode></zipCode><filterLogic>NO_CLOSED_CONTRACTS</filterLogic></ns1:readCustomerSubscriptions></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+Last Request Headers: 
+=====================
+POST /epsb-ws/ContractService/Contract HTTP/1.1
+Host: epsb-ws.verlagsinfo.de
+Connection: Keep-Alive
+User-Agent: PHP-SOAP/8.0.26
+Content-Type: text/xml; charset=utf-8
+SOAPAction: ""
+Content-Length: 471
+
+
+
+Last Response: 
+=====================
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Body><soap:Fault><faultcode>soap:Server</faultcode><faultstring>WEB-NO-SUBSCRIPTIONS-FOUND: es wurde kein Abonnement anhand der Suchkriterien ermittelt</faultstring><detail><ns2:EpsbException xmlns:ns2="http://contract.ws.epsb.bitech.de/"><errorCode>2</errorCode><errorMessage>WEB-NO-SUBSCRIPTIONS-FOUND: es wurde kein Abonnement anhand der Suchkriterien ermittelt</errorMessage></ns2:EpsbException></detail></soap:Fault></soap:Body></soap:Envelope>
+
+Last Response Headers: 
+=====================
+HTTP/1.1 500 Internal Server Error
+Date: Mon, 12 Dec 2022 20:41:07 GMT
+Server: WildFly/10
+X-Powered-By: Undertow/1
+Content-Type: text/xml;charset=UTF-8
+Content-Length: 525
+Connection: close
+
+
+Date: 2022-12-12 20:41:37
+Last Request: 
+=============
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://contract.ws.epsb.bitech.de/"><SOAP-ENV:Body><ns1:readCustomerSubscriptions><username>WS_HGB</username><password>z4GK99!$L7</password><mandatorId>VNR</mandatorId><eMail>michael.landmann@berlin.de</eMail><zipCode></zipCode><filterLogic>NO_CLOSED_CONTRACTS</filterLogic></ns1:readCustomerSubscriptions></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+Last Request Headers: 
+=====================
+POST /epsb-ws/ContractService/Contract HTTP/1.1
+Host: epsb-ws.verlagsinfo.de
+Connection: Keep-Alive
+User-Agent: PHP-SOAP/8.0.26
+Content-Type: text/xml; charset=utf-8
+SOAPAction: ""
+Content-Length: 471
+
+
+
+Last Response: 
+=====================
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Body><soap:Fault><faultcode>soap:Server</faultcode><faultstring>WEB-NO-SUBSCRIPTIONS-FOUND: es wurde kein Abonnement anhand der Suchkriterien ermittelt</faultstring><detail><ns2:EpsbException xmlns:ns2="http://contract.ws.epsb.bitech.de/"><errorCode>2</errorCode><errorMessage>WEB-NO-SUBSCRIPTIONS-FOUND: es wurde kein Abonnement anhand der Suchkriterien ermittelt</errorMessage></ns2:EpsbException></detail></soap:Fault></soap:Body></soap:Envelope>
+
+Last Response Headers: 
+=====================
+HTTP/1.1 500 Internal Server Error
+Date: Mon, 12 Dec 2022 20:41:37 GMT
+Server: WildFly/10
+X-Powered-By: Undertow/1
+Content-Type: text/xml;charset=UTF-8
+Content-Length: 525
+Connection: close
+
+
+Date: 2022-12-12 20:44:24
+Last Request: 
+=============
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://contract.ws.epsb.bitech.de/"><SOAP-ENV:Body><ns1:readCustomerSubscriptions><username>WS_HGB</username><password>z4GK99!$L7</password><mandatorId>VNR</mandatorId><customerIdStr>564656</customerIdStr><filterLogic>NO_CLOSED_CONTRACTS</filterLogic></ns1:readCustomerSubscriptions></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+Last Request Headers: 
+=====================
+POST /epsb-ws/ContractService/Contract HTTP/1.1
+Host: epsb-ws.verlagsinfo.de
+Connection: Keep-Alive
+User-Agent: PHP-SOAP/8.0.26
+Content-Type: text/xml; charset=utf-8
+SOAPAction: ""
+Content-Length: 448
+
+
+
+Last Response: 
+=====================
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Body><soap:Fault><faultcode>soap:Server</faultcode><faultstring>WEB-NO-SUBSCRIPTIONS-FOUND: es wurde kein Abonnement anhand der Suchkriterien ermittelt</faultstring><detail><ns2:EpsbException xmlns:ns2="http://contract.ws.epsb.bitech.de/"><errorCode>2</errorCode><errorMessage>WEB-NO-SUBSCRIPTIONS-FOUND: es wurde kein Abonnement anhand der Suchkriterien ermittelt</errorMessage></ns2:EpsbException></detail></soap:Fault></soap:Body></soap:Envelope>
+
+Last Response Headers: 
+=====================
+HTTP/1.1 500 Internal Server Error
+Date: Mon, 12 Dec 2022 20:44:24 GMT
+Server: WildFly/10
+X-Powered-By: Undertow/1
+Content-Type: text/xml;charset=UTF-8
+Content-Length: 525
+Connection: close
+
+
+Date: 2022-12-12 20:51:10
+Last Request: 
+=============
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://contract.ws.epsb.bitech.de/"><SOAP-ENV:Body><ns1:readCustomerSubscriptions><username>WS_HGB</username><password>z4GK99!$L7</password><mandatorId>VNR</mandatorId><eMail>michael.landmann@berlin.de</eMail><zipCode></zipCode><filterLogic>NO_CLOSED_CONTRACTS</filterLogic></ns1:readCustomerSubscriptions></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+Last Request Headers: 
+=====================
+POST /epsb-ws/ContractService/Contract HTTP/1.1
+Host: epsb-ws.verlagsinfo.de
+Connection: Keep-Alive
+User-Agent: PHP-SOAP/8.0.26
+Content-Type: text/xml; charset=utf-8
+SOAPAction: ""
+Content-Length: 471
+
+
+
+Last Response: 
+=====================
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Body><soap:Fault><faultcode>soap:Server</faultcode><faultstring>WEB-NO-SUBSCRIPTIONS-FOUND: es wurde kein Abonnement anhand der Suchkriterien ermittelt</faultstring><detail><ns2:EpsbException xmlns:ns2="http://contract.ws.epsb.bitech.de/"><errorCode>2</errorCode><errorMessage>WEB-NO-SUBSCRIPTIONS-FOUND: es wurde kein Abonnement anhand der Suchkriterien ermittelt</errorMessage></ns2:EpsbException></detail></soap:Fault></soap:Body></soap:Envelope>
+
+Last Response Headers: 
+=====================
+HTTP/1.1 500 Internal Server Error
+Date: Mon, 12 Dec 2022 20:51:10 GMT
+Server: WildFly/10
+X-Powered-By: Undertow/1
+Content-Type: text/xml;charset=UTF-8
+Content-Length: 525
+Connection: close
+
+
+Date: 2022-12-12 21:06:25
+Last Request: 
+=============
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://contract.ws.epsb.bitech.de/"><SOAP-ENV:Body><ns1:readCustomerSubscriptions><username>WS_HGB</username><password>z4GK99!$L7</password><mandatorId>VNR</mandatorId><eMail>michael.landmann@berlin.de</eMail><zipCode></zipCode><filterLogic>NO_CLOSED_CONTRACTS</filterLogic></ns1:readCustomerSubscriptions></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+Last Request Headers: 
+=====================
+POST /epsb-ws/ContractService/Contract HTTP/1.1
+Host: epsb-ws.verlagsinfo.de
+Connection: Keep-Alive
+User-Agent: PHP-SOAP/8.0.26
+Content-Type: text/xml; charset=utf-8
+SOAPAction: ""
+Content-Length: 471
+
+
+
+Last Response: 
+=====================
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Body><soap:Fault><faultcode>soap:Server</faultcode><faultstring>WEB-NO-SUBSCRIPTIONS-FOUND: es wurde kein Abonnement anhand der Suchkriterien ermittelt</faultstring><detail><ns2:EpsbException xmlns:ns2="http://contract.ws.epsb.bitech.de/"><errorCode>2</errorCode><errorMessage>WEB-NO-SUBSCRIPTIONS-FOUND: es wurde kein Abonnement anhand der Suchkriterien ermittelt</errorMessage></ns2:EpsbException></detail></soap:Fault></soap:Body></soap:Envelope>
+
+Last Response Headers: 
+=====================
+HTTP/1.1 500 Internal Server Error
+Date: Mon, 12 Dec 2022 21:06:25 GMT
+Server: WildFly/10
+X-Powered-By: Undertow/1
+Content-Type: text/xml;charset=UTF-8
+Content-Length: 525
+Connection: close
+
+
+Date: 2022-12-12 21:14:58
+Last Request: 
+=============
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://contract.ws.epsb.bitech.de/"><SOAP-ENV:Body><ns1:readCustomerSubscriptions><username>WS_HGB</username><password>z4GK99!$L7</password><mandatorId>VNR</mandatorId><eMail>michael.landmann@berlin.de</eMail><zipCode></zipCode><filterLogic>NO_CLOSED_CONTRACTS</filterLogic></ns1:readCustomerSubscriptions></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+Last Request Headers: 
+=====================
+POST /epsb-ws/ContractService/Contract HTTP/1.1
+Host: epsb-ws.verlagsinfo.de
+Connection: Keep-Alive
+User-Agent: PHP-SOAP/8.0.26
+Content-Type: text/xml; charset=utf-8
+SOAPAction: ""
+Content-Length: 471
+
+
+
+Last Response: 
+=====================
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Body><soap:Fault><faultcode>soap:Server</faultcode><faultstring>WEB-NO-SUBSCRIPTIONS-FOUND: es wurde kein Abonnement anhand der Suchkriterien ermittelt</faultstring><detail><ns2:EpsbException xmlns:ns2="http://contract.ws.epsb.bitech.de/"><errorCode>2</errorCode><errorMessage>WEB-NO-SUBSCRIPTIONS-FOUND: es wurde kein Abonnement anhand der Suchkriterien ermittelt</errorMessage></ns2:EpsbException></detail></soap:Fault></soap:Body></soap:Envelope>
+
+Last Response Headers: 
+=====================
+HTTP/1.1 500 Internal Server Error
+Date: Mon, 12 Dec 2022 21:14:58 GMT
+Server: WildFly/10
+X-Powered-By: Undertow/1
+Content-Type: text/xml;charset=UTF-8
+Content-Length: 525
+Connection: close
+
+
+Date: 2022-12-12 22:02:00
+Last Request: 
+=============
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://contract.ws.epsb.bitech.de/"><SOAP-ENV:Body><ns1:readCustomerSubscriptions><username>WS_HGB</username><password>z4GK99!$L7</password><mandatorId>VNR</mandatorId><eMail>michael.landmann@berlin.de</eMail><zipCode></zipCode><filterLogic>NO_CLOSED_CONTRACTS</filterLogic></ns1:readCustomerSubscriptions></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+Last Request Headers: 
+=====================
+POST /epsb-ws/ContractService/Contract HTTP/1.1
+Host: epsb-ws.verlagsinfo.de
+Connection: Keep-Alive
+User-Agent: PHP-SOAP/8.0.26
+Content-Type: text/xml; charset=utf-8
+SOAPAction: ""
+Content-Length: 471
+
+
+
+Last Response: 
+=====================
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Body><soap:Fault><faultcode>soap:Server</faultcode><faultstring>WEB-NO-SUBSCRIPTIONS-FOUND: es wurde kein Abonnement anhand der Suchkriterien ermittelt</faultstring><detail><ns2:EpsbException xmlns:ns2="http://contract.ws.epsb.bitech.de/"><errorCode>2</errorCode><errorMessage>WEB-NO-SUBSCRIPTIONS-FOUND: es wurde kein Abonnement anhand der Suchkriterien ermittelt</errorMessage></ns2:EpsbException></detail></soap:Fault></soap:Body></soap:Envelope>
+
+Last Response Headers: 
+=====================
+HTTP/1.1 500 Internal Server Error
+Date: Mon, 12 Dec 2022 22:02:00 GMT
+Server: WildFly/10
+X-Powered-By: Undertow/1
+Content-Type: text/xml;charset=UTF-8
+Content-Length: 525
+Connection: close
+
+
+Date: 2022-12-13 05:45:48
+Last Request: 
+=============
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://contract.ws.epsb.bitech.de/"><SOAP-ENV:Body><ns1:readCustomerSubscriptions><username>WS_HGB</username><password>z4GK99!$L7</password><mandatorId>VNR</mandatorId><eMail>michael.landmann@berlin.de</eMail><zipCode>13055</zipCode><filterLogic>NO_CLOSED_CONTRACTS</filterLogic></ns1:readCustomerSubscriptions></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+Last Request Headers: 
+=====================
+POST /epsb-ws/ContractService/Contract HTTP/1.1
+Host: epsb-ws.verlagsinfo.de
+Connection: Keep-Alive
+User-Agent: PHP-SOAP/8.0.26
+Content-Type: text/xml; charset=utf-8
+SOAPAction: ""
+Content-Length: 476
+
+
+
+Last Response: 
+=====================
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Body><soap:Fault><faultcode>soap:Server</faultcode><faultstring>WEB-NO-SUBSCRIPTIONS-FOUND: es wurde kein Abonnement anhand der Suchkriterien ermittelt</faultstring><detail><ns2:EpsbException xmlns:ns2="http://contract.ws.epsb.bitech.de/"><errorCode>2</errorCode><errorMessage>WEB-NO-SUBSCRIPTIONS-FOUND: es wurde kein Abonnement anhand der Suchkriterien ermittelt</errorMessage></ns2:EpsbException></detail></soap:Fault></soap:Body></soap:Envelope>
+
+Last Response Headers: 
+=====================
+HTTP/1.1 500 Internal Server Error
+Date: Tue, 13 Dec 2022 05:45:48 GMT
+Server: WildFly/10
+X-Powered-By: Undertow/1
+Content-Type: text/xml;charset=UTF-8
+Content-Length: 525
+Connection: close
+
+
