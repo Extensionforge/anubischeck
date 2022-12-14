@@ -33,7 +33,7 @@ function callApi()
     	$testEmail = $current_user->user_email;
     	$user_id = get_current_user_id();
     	
-        $service = new AnubisService;
+        //$service = new AnubisService;
 
         // if user has customer number, try this first. Then try zipcode, if existant
 
@@ -60,7 +60,7 @@ function callApi()
 add_action('set_logged_in_cookie', 'custom_get_logged_in_cookie_anubischeck', 10, 6);
 function custom_get_logged_in_cookie_anubischeck($logged_in_cookie, $expire, $expiration, $user_id, $logged_in_text, $token)
 {
-	callApi();
+	//callApi();
 }
 
 
@@ -273,7 +273,7 @@ class Vnr_Anubischeck {
 		 * core plugin.
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-vnr-anubischeck-loader.php';
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/service.php';
+		//require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/service.php';
 
 
 		/**
