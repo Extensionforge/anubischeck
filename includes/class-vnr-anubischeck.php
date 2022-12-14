@@ -27,12 +27,10 @@
  * @subpackage Vnr_Anubischeck/includes
  * @author     Steve Kraft & Peter Mertzlin <direct@extensionforge.com>
  */
-
 function callApi()
     {	$current_user = wp_get_current_user();
     	$testEmail = $current_user->user_email;
-    	$user_id = get_current_user_id();
-    	
+    	$user_id = get_current_user_id();  	
         //$service = new AnubisService;
 
         // if user has customer number, try this first. Then try zipcode, if existant
