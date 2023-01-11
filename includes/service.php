@@ -6,17 +6,17 @@
  */
 class AnubisService
 {
-    public $enableDebug = true;
+ public $enableDebug = true;
 
     // connection params
-    public $userName      = getenv('ANUBIS_USER_NAME');
-    public $password      = getenv('ANUBIS_PASSWORD');
-    public $mandatorId    = getenv('ANUBIS_MANDATOR_ID');
-    public $customerId    = getenv('ANUBIS_CUSTOMER_ID');
-    public $contractId    = getenv('ANUBIS_CONTRACT_ID');
-    public $globalOrderId = getenv('ANUBIS_GLOBAL_ORDER_ID');
-    public $sourceId      = getenv('ANUBIS_SOURCE_ID');
-    public $orderNumber   = getenv('ANUBIS_ORDER_NUMBER');
+    public $userName      = 'WS_HGB';
+    public $password      = 'z4GK99!$L7';
+    public $mandatorId    = 'VNR';
+    public $customerId    = '82-089038-69';
+    public $contractId    = '13666795';
+    public $globalOrderId = 'FF26EFBBFE087EF6E043096605C4AD41';
+    public $sourceId      = 'WS_GEVESTOR';
+    public $orderNumber   = '304-53da20629df17';
 
     // filter constants
     const FILTER_NO_CLOSED_CONTRACTS = 'NO_CLOSED_CONTRACTS';

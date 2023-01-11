@@ -27,38 +27,186 @@
  * @subpackage Vnr_Anubischeck/includes
  * @author     Steve Kraft & Peter Mertzlin <direct@extensionforge.com>
  */
-function callApi()
-    {	$current_user = wp_get_current_user();
+function getSoapConnection()
+    {
+        //Path to wsdl
+        $wsdl = plugin_dir_path( dirname( __FILE__ ) ) . 'includes/contract.wsdl';
+        
+        //options
+        $options = array(
+            'location' => "https://epsb-ws.verlagsinfo.de/epsb-ws/ContractService/Contract",
+            'uri'      => "http://order.ws.epsb.bitech.de",
+            'trace'    => true,
+        );
+        //Create the a new Soap Client
+        return new SoapClient($wsdl, $options);
+    }
+
+function hasSubscriptionsByCustomerNumber($customerNumber){
+
+		// connection params from server
+		//$userName      = getenv('ANUBIS_USER_NAME');
+	    //$password      = getenv('ANUBIS_PASSWORD');
+	    //$mandatorId    = getenv('ANUBIS_MANDATOR_ID');
+	    //$customerId    = getenv('ANUBIS_CUSTOMER_ID');
+	    //$contractId    = getenv('ANUBIS_CONTRACT_ID');
+	    //$globalOrderId = getenv('ANUBIS_GLOBAL_ORDER_ID');
+	    //$sourceId      = getenv('ANUBIS_SOURCE_ID');
+	    //$orderNumber   = getenv('ANUBIS_ORDER_NUMBER');
+
+	    // connection params hardcoded
+	    $userName      = 'WS_HGB';
+	    $password      = 'z4GK99!$L7';
+	    $mandatorId    = 'VNR';
+	    $customerId    = '82-089038-69';
+	    $contractId    = '13666795';
+	    $globalOrderId = 'FF26EFBBFE087EF6E043096605C4AD41';
+	    $sourceId      = 'WS_GEVESTOR';
+	    $orderNumber   = '304-53da20629df17';
+
+	    $filterLogic = 'NO_CLOSED_CONTRACTS';
+
+	    // exception constants
+	    $nofound = 'WEB-NO-SUBSCRIPTIONS-FOUND';
+
+	    $client = getSoapConnection();
+        // die($customerNumber);
+
+        $param = array('username' => new SoapVar($userName, XSD_STRING),
+            'password'               => new SoapVar($password, XSD_STRING),
+            'mandatorId'             => $mandatorId,
+            'customerIdStr'          => $customerNumber,
+            // 'contractId'             => $this->contractId,
+            'filterLogic'            => $filterLogic,
+            // 'orderNumber'            => $this->orderNumber,
+            //    ,'productShortname' => "SPC"
+        );
+
+        try {
+            $result = $client->__soapCall("readCustomerSubscriptions", array('parameters' => $param));
+        } catch (Exception $ex) {
+            //echo '</pre>';
+            // no customer found equals exception
+        	$message  = $ex->getMessage();
+        	$msgParts = explode(':', $message);
+        	//$testo = $wpdb->insert("tester", array('text' => json_encode($message)), array('%s') );
+           if ($nofound == $msgParts[0]) { return 0; }
+        }
+
+        $daten = $result->customerSubscriptions;
+	    $abos = 0;
+	    foreach ($daten as $mydat) {
+		    if($mydat->statusDescription=="RUNNING"){$abos++;}   	
+	    }
+
+	    return intval($abos);
+
+}
+
+
+
+function hasSubscriptionsByZipCode($email, $zipcode){
+
+		global $wpdb;
+	    // connection params
+	    $userName      = 'WS_HGB';
+	    $password      = 'z4GK99!$L7';
+	    $mandatorId    = 'VNR';
+	    $customerId    = '82-089038-69';
+	    $contractId    = '13666795';
+	    $globalOrderId = 'FF26EFBBFE087EF6E043096605C4AD41';
+	    $sourceId      = 'WS_GEVESTOR';
+	    $orderNumber   = '304-53da20629df17';
+
+	    $filterLogic = 'NO_CLOSED_CONTRACTS';
+
+	    // exception constants
+	    $nofound = 'WEB-NO-SUBSCRIPTIONS-FOUND';
+
+	    $client = getSoapConnection();
+        // die($customerNumber);
+
+        $param = array('username' => new SoapVar($this->userName, XSD_STRING),
+            'password'               => new SoapVar($this->password, XSD_STRING),
+            'mandatorId'             => $this->mandatorId,
+            // 'customerId'             => $this->customerId,
+            // 'contractId'             => $this->contractId,
+         
+            'zipCode'                => $zipcode,
+            'eMail'                  => $email,
+            'filterLogic'            => $filterLogic,
+          
+            // 'orderNumber'            => $this->orderNumber,
+            //    ,'productShortname' => "SPC"
+        );
+
+        try {
+            $result = $client->__soapCall("readCustomerSubscriptions", array('parameters' => $param));
+        } catch (Exception $ex) {
+            //echo '</pre>';
+            // no customer found equals exception
+        	$message  = $ex->getMessage();
+        	$msgParts = explode(':', $message);
+        	//$testo = $wpdb->insert("tester", array('text' => json_encode($message)), array('%s') );
+           if ($nofound == $msgParts[0]) { return 0; }
+        }
+
+        $daten = $result->customerSubscriptions;
+	    $abos = 0;
+	    foreach ($daten as $mydat) {
+		    if($mydat->statusDescription=="RUNNING"){$abos++;}   	
+	    }
+
+	    return intval($abos);
+
+}
+
+
+
+function callApi($user_id)
+    {	$current_user = get_user_by( 'id', $user_id ); 
     	$testEmail = $current_user->user_email;
-    	$user_id = get_current_user_id();  	
-        //$service = new AnubisService;
+    	
+    	global $wpdb;
+    	$hasSubscriptions = false;
+    	$kdnrtest = xprofile_get_field_data("Kundennummer", $user_id);
 
         // if user has customer number, try this first. Then try zipcode, if existant
 
-        if (null != xprofile_get_field_data("Kundennummer", $user_id)) {
+         if (null != xprofile_get_field_data("Kundennummer", $user_id)) {
             // convert customer number to correct format if necessary
             $customerNumber = preg_replace( '/[^0-9]/', '', xprofile_get_field_data( "Kundennummer", $user_id));
             $customerNumber = substr($customerNumber, 0, 8);
          
-            $hasSubscriptions = $service->hasSubscriptionsByCustomerNumber($customerNumber);
+            $hasSubscriptions = hasSubscriptionsByCustomerNumber($customerNumber);
         } elseif (null != xprofile_get_field_data( "Postleitzahl", $user_id)) {
-            $hasSubscriptions = $service->hasSubscriptions($testEmail, xprofile_get_field_data( "Postleitzahl", $user_id));
+            $hasSubscriptions = hasSubscriptionsByZipCode($testEmail, xprofile_get_field_data( "Postleitzahl", $user_id));
         } else {
             // has no customer number, has no zipcode => can't check for subscriptions
-            $hasSubscriptions = false;  
+            $hasSubscriptions = 0;  
         }
-        // $hasSubscriptions = true;
-        if ($hasSubscriptions) {
-            update_user_meta( $user_id, 'bp_verified_member', "1" );	   
-        } else {
-            update_user_meta( $user_id, 'bp_verified_member', "" );	 
-        }
+       
+      if($hasSubscriptions>0){
+      	// wenn abos da dann
+      	 update_user_meta( $user_id, 'bp_verified_member', "1" );	
+      } else { update_user_meta( $user_id, 'bp_verified_member', "" );	 }
+
+
+      
+
     }
+
+
 	
 add_action('set_logged_in_cookie', 'custom_get_logged_in_cookie_anubischeck', 10, 6);
 function custom_get_logged_in_cookie_anubischeck($logged_in_cookie, $expire, $expiration, $user_id, $logged_in_text, $token)
 {
-	//callApi();
+	callApi($user_id);
+	//$test = hasSubscriptionsByCustomerNumber("93030125","hoh@vnr.de");
+	//global $wpdb;
+	 //$wdsl = plugin_dir_path( dirname( __FILE__ ) ) . 'includes/contract.wsdl';
+	//$testo = $wpdb->insert("tester", array('text' => $wdsl), array('%s') );
+
 }
 
 
@@ -144,7 +292,7 @@ class My_Custom_Widget extends WP_Widget {
 
 			// Display widget title if defined
 
-		if($isvip[0]=="1") { 
+		if($isvip[0]!="") { 
 
 			$imageurl = plugins_url('vip-badge.jpg', __FILE__);
 			//display VIP ICON
@@ -181,10 +329,12 @@ function vnr_save_kdnr()
 {
     $kdnr = $_POST['customernr'];
     $user_id = get_current_user_id();
-    $user = get_user_by('id', $user_id);    
-   
+    $user = get_user_by('id', $user_id);
     xprofile_set_field_data('Kundennummer', $user_id,  $kdnr);
+    callApi($user_id);
     echo json_encode($user_id);
+
+
 }
 
 add_action('wp_ajax_nopriv_vnr_save_kdnr', 'vnr_save_kdnr');
@@ -271,7 +421,7 @@ class Vnr_Anubischeck {
 		 * core plugin.
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-vnr-anubischeck-loader.php';
-		//require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/service.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/service.php';
 
 
 		/**

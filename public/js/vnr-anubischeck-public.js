@@ -15,11 +15,19 @@
                 action: 'vnr_save_kdnr',
                 customernr: stripped    
             },  
-           success: function(data) {     
+           success: function(data) {   
+
                           $('#vnr_savedkdnr').html('Kundennummer gespeichert.<br /><b>'+stripped+'</b>');
                           $('#vnr_enter_customernr').val(stripped);
-          
-                          $("#vnr_savedkdnr").delay(3000).fadeOut(2000);  },
+                          $("#vnr_savedkdnr").delay(3000).fadeOut(2000); 
+                         
+
+                          setTimeout(function() { 
+         location.reload();
+    }, 2000);
+
+                          
+                             },
                           error: function() {
                             alert('There was some error saving(Maybe Buddypress missing?)!');
                           }
